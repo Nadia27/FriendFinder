@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <title>Document</title>
+  
+  <!--Bootstrap-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<meta http-equiv="Content-Security-Policy" content="default-src *">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+	
+		<header>
+			<h1 align="center">Find a Friend Survey</h1>
+
+			<hr>
+		</header>
+
+	<div class="container">
+		
+	<h3>Tell Us About You!!!</h3>
+		
+	
+
+
+	<form>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" placeholder="John Doe">
+  </div>
+  <div class="form-group">
+    <label for="image">Photo Link</label>
+    <input type="text" class="form-control" id="image" placeholder="John Doe">
+  </div>
+  <div class="form-group">
+    <label for="q1"><strong>Question 1:</strong> I prefer a traditional date.</label>
+    <select class="form-control" id="q1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="q2"><strong>Question 2:</strong> I love the outdoors.</label>
+    <select class="form-control" id="q2">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="q3"><strong>Question 3:</strong> I am not a family person.</label>
+    <select class="form-control" id="q3">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+<div class="form-group">
+    <label for="q4"><strong>Question 4:</strong> I love animals.</label>
+    <select class="form-control" id="q4">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="q5"><strong>Question 5:</strong> I want a family of my own one day.</label>
+    <select class="form-control" id="q5">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="q6"><strong>Question 6:</strong> I am not a religious person.</label>
+    <select class="form-control" id="q6">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="q7"><strong>Question 7:</strong> I'm a daredevil.</label>
+    <select class="form-control" id="q7">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="q8"><strong>Question 8:</strong> I prefer to text than talk on the phone.</label>
+    <select class="form-control" id="q8">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="q9"><strong>Question 9:</strong>I prefer Netflix and chill rather than a night on the town</label>
+    <select class="form-control" id="q9">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="q10"><strong>Question 10:</strong>I do not like video games.</label>
+    <select class="form-control" id="q10">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary" id="submit">Find-a-friend</button>
+  
+</form>
+
+</div>
+
+<script type="text/javascript">
+    
+    // Grab user input
+    $("#submit").on("click", function(event) {
+      event.preventDefault();
+      var newFriend = {
+        name: $("#name").val().trim(),
+        image: $("#image").val().trim(),
+        answers: [
+        q1 = $("#q1").val(),
+        q2 = $("#q2").val(),
+        q3 = $("#q3").val(),
+        q4 = $("#q4").val(),
+        q5 = $("#q5").val(),
+        q6 = $("#q6").val(),
+        q7 = $("#q7").val(),
+        q8 = $("#q8").val(),
+        q9 = $("#q9").val(),
+        q10 = $("#q10").val()
+        ],
+        scores: function() {
+          var surveyArray = []; 
+          for (var i = 0; i < answers.length; i++) {
+            surveyArray.push(answers[i]);
+          }
+        }
+      }
+    
+      console.log(newFriend);
+        
+     // Post new friend to api
+      $.post("/api/friends", newFriend)
+      .then(function(data) {
+        console.log(data);
+        alert("You have been added to the Find-a-friend");
+      });
+
+    });
+  
+  </script>
+
+
+
+	
+
+
+
+</body>
+</html>

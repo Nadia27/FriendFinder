@@ -3,6 +3,7 @@ var path = require("path");
 var router = express.Router();
 
 
+
 // Routes
 // =============================================================
 
@@ -17,7 +18,7 @@ router.get("/survey", function(req, res) {
 });
 
 //"catch all" catches routes not previously defined
-router.get("/*", function(req, res) {
+router.get("*", function(req, res) {
    res.sendFile(path.join(__dirname, "../public/home.html"));
 });
 

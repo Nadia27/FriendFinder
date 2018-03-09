@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+  <meta charset="UTF-8">
+ <!--  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'"> -->
   <title>Document</title>
   
   <!--Bootstrap-->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<meta http-equiv="Content-Security-Policy" content="default-src *">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -172,8 +172,8 @@
         ],
         scores: function() {
           var surveyArray = []; 
-          for (var i = 0; i < answers.length; i++) {
-            surveyArray.push(answers[i]);
+          for (var i = 0; i < newFriend.answers.length; i++) {
+            surveyArray.push(newFriend.answers[i]);
           }
         }
       }
@@ -183,7 +183,7 @@
      // Post new friend to api
       $.post("/api/friends", newFriend)
       .then(function(data) {
-        console.log(data);
+        console.log("I am the data: " + data);
         alert("You have been added to the Find-a-friend");
       });
 

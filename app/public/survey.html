@@ -175,7 +175,7 @@
       </div>
       <div class="modal-body">
       <img id="match-img" scr="http://via.placeholder.com/140x100">
-        <h3 id="matches"></h3>
+        <h3 id="matched-name"></h3>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary">Ok</button>
@@ -210,19 +210,22 @@
       };
 
       // Post new friend to api
-      $.post("/api/friends", newFriend)
-        .then(function (data) {
+      $.post("/api/friends",newFriend, function(data) {
+     
           // console.log("I am the data: " + data);
-          alert("You have been added to the Find-a-friend");
-          // Grab the result from the AJAX post so that the best match's name and photo are displayed. $("#match-name").text(data.name);
-          $("#match-img").attr("src", data.photo); 
+          //alert("You have been added to the Find-a-friend");
+          // Grab the result from the AJAX post so that the best match's name and photo are displayed. 
+          $("#matched-name").text(data.name);
+          $("#match-img").attr("src", data.image); 
           // Show the modal with the best match 
           $("#match-modal").modal("toggle"); 
-          //else { alert("Please fill out all fields before submitting!"); }
+          
 
         });
 
     });
+
+
 
     
   </script>

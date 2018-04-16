@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Friend Finder Survey</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer="defer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" defer="defer"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" defer="defer"></script>
+    <script src="/js/survey.js" defer="defer"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1 align="center">Find a Friend Survey</h1>
+      <hr>
+    </header>
+
+    <div class="container">
+      <h3>Tell Us About You!!!</h3>
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label for="image">Photo Link</label>
+          <input type="text" class="form-control" id="image" placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label for="q1">
+            <strong>Question 1:</strong> I prefer a traditional date.</label>
+          <select class="form-control" id="q1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="q2">
+            <strong>Question 2:</strong> I love the outdoors.</label>
+          <select class="form-control" id="q2">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="q3">
+            <strong>Question 3:</strong> I am not a family person.</label>
+          <select class="form-control" id="q3">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="q4">
+            <strong>Question 4:</strong> I love animals.</label>
+          <select class="form-control" id="q4">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="q5">
+            <strong>Question 5:</strong> I want a family of my own one day.</label>
+          <select class="form-control" id="q5">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="q6">
+            <strong>Question 6:</strong> I am not a religious person.</label>
+          <select class="form-control" id="q6">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="q7">
+            <strong>Question 7:</strong> I'm a daredevil.</label>
+          <select class="form-control" id="q7">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="q8">
+            <strong>Question 8:</strong> I prefer to text than talk on the phone.</label>
+          <select class="form-control" id="q8">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="q9">
+            <strong>Question 9:</strong> I prefer Netflix and chill rather than a night on the town</label>
+          <select class="form-control" id="q9">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="q10">
+            <strong>Question 10:</strong> I do not like video games.</label>
+          <select class="form-control" id="q10">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="submit">Find-a-friend</button>
+
+      </form>
+
+      <div class="match-modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Your Matches</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img id="match-img" scr="http://via.placeholder.com/140x100">
+              <h3 id="matched-name"></h3>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Ok</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </body>
+
+</html>

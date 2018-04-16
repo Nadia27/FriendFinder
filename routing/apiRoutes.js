@@ -50,8 +50,8 @@ router2.post('/api/friends', function(req, res) {
             // Use the variables to set the appropriate friend match
             matchName = friend.name;
             matchPhoto = friend.image;
-            console.log(matchName);
-            console.log(matchPhoto);
+            console.log("I am the matched name: " + matchName);
+            console.log("I am the match photo:" + matchPhoto);
         }
     });
     // closest match will be the user with the least amount of difference

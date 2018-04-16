@@ -29,7 +29,8 @@ $('#submit').on('click', function(event) {
         // Grab the result from the AJAX post so that the best match's name and photo are displayed.
         $('#matched-name').text(data.name);
         $('#match-img').attr('src', data.image);
+        
         // Show the modal with the best match
-        $('#match-modal').modal('toggle');
+        $('.match-modal').modal('toggle');
     });
 });

@@ -1,21 +1,27 @@
-Pseudocode
-///////////////////////////////////////////////////////////////////////////
+# Node-Express Full-Stack Application
 
+## Friend Friender
 
---------------------- Front end--------------------------------
-User Friendly layout 
+### Description
 
+ This full-stack site will take in results from a users' surveys, then compare their answers with those from other users. The app will then display the name and picture of the user with the best overall match.
 
--htmlRoutes
-homePage - GET (/*) Display homePg
-surveyPage - GET route (/survey)
+### Built With
 
++ Node
++ Express- used to handle routing
++ Bootstrap
++ HTML
++ JavaScript
++ jQuery
 
--apiRoutes
+### NPM Package Requirements
 
-GET display JSON for all friends
-POST route to to handle new results and compat. results 
++ Body-Parser
++ Path
++ Express
 
+#### Use of Routes
 
-
-store user data 
++ GET route with the url /api/friends. This will be used to display a JSON of all possible friends.
++ POST routes /api/friends. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic.
